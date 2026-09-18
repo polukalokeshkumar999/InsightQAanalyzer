@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* Risk level badges */
+.risk-critical {
+  @apply bg-red-100 text-red-800 border-red-300;
+}
+
+.risk-high {
+  @apply bg-orange-100 text-orange-800 border-orange-300;
+}
+
+.risk-medium {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-300;
+}
+
+.risk-low {
+  @apply bg-green-100 text-green-800 border-green-300;
+}
+
+/* Priority badges */
+.priority-critical {
+  @apply bg-red-500 text-white;
+}
+
+.priority-high {
+  @apply bg-orange-500 text-white;
+}
+
+.priority-medium {
+  @apply bg-yellow-500 text-white;
+}
+
+.priority-low {
+  @apply bg-green-500 text-white;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+/* Textarea styling */
+textarea {
+  @apply transition-shadow duration-200;
+}
+
+textarea:focus {
+  @apply ring-2 ring-primary-500 ring-offset-2;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-medium 
+         hover:bg-primary-700 active:bg-primary-800 
+         transition-colors duration-200 
+         focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+         disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 px-6 py-3 rounded-lg font-medium border border-gray-300
+         hover:bg-gray-50 active:bg-gray-100 
+         transition-colors duration-200
+         focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2;
+}
+
+/* Loading spinner */
+.spinner {
+  @apply animate-spin rounded-full border-4 border-primary-200 border-t-primary-600;
+}
+
+/* Tab styles */
+.tab-active {
+  @apply border-b-2 border-primary-600 text-primary-600 font-medium;
+}
+
+.tab-inactive {
+  @apply text-gray-500 hover:text-gray-700 hover:border-b-2 hover:border-gray-300;
+}
+
+/* Tooltip */
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
